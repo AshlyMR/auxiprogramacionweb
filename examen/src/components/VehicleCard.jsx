@@ -21,13 +21,13 @@ function VehicleCard({ vehicle, toggleOwned, toggleFavorite }) {
                 />
             </div>
 
-            {/* tarjeta */}
+  
             <div className="vehicle-card-body">
 
-                {/* Nombrvehí */}
+     
                 <div className="vehicle-card-name">{vehicle.name}</div>
 
-                {/* Categoría y Año */}
+         
                 <div className="d-flex justify-content-between align-items-center my-2">
                     <span className="vehicle-card-category">
                         <i className="fas fa-tag me-1"></i>
@@ -39,7 +39,7 @@ function VehicleCard({ vehicle, toggleOwned, toggleFavorite }) {
                     </span>
                 </div>
 
-                {/* Descri */}
+        
                 <p style={{
                     color: 'var(--hw-text-muted)',
                     fontSize: '0.8rem',
@@ -49,10 +49,8 @@ function VehicleCard({ vehicle, toggleOwned, toggleFavorite }) {
                     {vehicle.description}
                 </p>
 
-                {/* Boacción */}
                 <div className="d-flex gap-2">
 
-                    {/* Botón: Agregar/Quitar de colección */}
                     <button
                         className={`btn-collect ${vehicle.owned ? 'collected' : ''}`}
                         onClick={() => toggleOwned(vehicle.id)}
@@ -61,7 +59,6 @@ function VehicleCard({ vehicle, toggleOwned, toggleFavorite }) {
                         {vehicle.owned ? 'Obtenido' : 'Agregar'}
                     </button>
 
-                    {/* BoFav */}
                     <button
                         className={`btn-favorite ${vehicle.favorite ? 'active' : ''}`}
                         onClick={() => toggleFavorite(vehicle.id)}
