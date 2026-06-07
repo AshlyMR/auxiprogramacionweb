@@ -7,7 +7,7 @@ function ProgressBar({ percentage, label, owned, total }) {
 
     return (
         <div className="mb-3">
-            {/* Encabe */}
+
             <div className="d-flex justify-content-between align-items-center mb-1">
                 <span style={{ color: 'var(--hw-text)', fontWeight: '600', fontSize: '0.9rem' }}>
                     {label}
@@ -17,7 +17,7 @@ function ProgressBar({ percentage, label, owned, total }) {
                 </span>
             </div>
 
-            {/* Barra de progreso */}
+
             <div className="hw-progress">
                 <div
                     className="hw-progress-bar"
