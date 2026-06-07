@@ -35,8 +35,8 @@ function App() {
     setVehicles(prevVehicles =>
       prevVehicles.map(vehicle =>
         vehicle.id === id
-          ? { ...vehicle, owned: !vehicle.owned }  // Invertir el valor
-          : vehicle  // Dejar igual los demás
+          ? { ...vehicle, owned: !vehicle.owned }  
+          : vehicle  
       )
     )
   }
@@ -60,18 +60,16 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* Navbar aparece en TODAS las páginas */}
       <Navbar vehicles={vehicles} />
 
-      {/* Aquí se renderiza la página según la URL */}
       <Routes>
-        {/* Página 1: Inicio → URL: / */}
+
         <Route
           path="/"
           element={<Home vehicles={vehicles} />}
         />
 
-        {/* Página 2: Mi Colección → URL: /coleccion */}
+    
         <Route
           path="/coleccion"
           element={
@@ -83,14 +81,14 @@ function App() {
           }
         />
 
-        {/* Página 3: Categorías → URL: /categorias */}
+
         <Route
           path="/categorias"
           element={<Categories vehicles={vehicles} />}
         />
       </Routes>
 
-      {/* Footer */}
+
       <footer className="hw-footer">
         <p>
           <i className="fas fa-car me-2" style={{color: 'var(--hw-red)'}}></i>
