@@ -1,4 +1,4 @@
-/* src/App.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Orbitron:wght@400;700;900&display=swap');
 
 
@@ -7,18 +7,18 @@
     --hw-orange: #ff6a00;
     --hw-yellow: #ffd700;
     --hw-blue-dark: #0a1628;
-    /* Fondo principal azul oscuro */
+  
     --hw-blue-mid: #0d1f3c;
-    /* Fondo secundario */
+ 
     --hw-blue-accent: #1a3a6e;
-    /* Azul medio tarjetas */
+  
     --hw-cyan: #00cfff;
-    /* Cyan/azul brillante del logo */
+
     --hw-card-bg: #0f1e35;
-    /* Fondo tarjetas */
+ 
     --hw-text: #ffffff;
     --hw-text-muted: #7a9cc0;
-    /* Texto secundario azul grisáceo */
+   
     --hw-border: #1e3a5f;
     --hw-success: #00e676;
     --hw-gradient: linear-gradient(135deg, #e31837, #ff6a00);
@@ -109,7 +109,7 @@ h3 {
     align-items: center;
 }
 
-/* Patrón de fondo tipo HOT WHEELS */
+
 .hw-banner::before {
     content: 'HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS';
     position: absolute;
@@ -266,7 +266,7 @@ h3 {
     font-size: 0.85rem;
 }
 
-/* Botón coleccionar */
+
 .btn-collect {
     background: linear-gradient(135deg, #e31837, #ff6a00);
     border: none;
@@ -296,7 +296,7 @@ h3 {
     box-shadow: 0 5px 15px rgba(0, 200, 81, 0.5);
 }
 
-/* Botón favorito */
+
 .btn-favorite {
     background: transparent;
     border: 1px solid rgba(255, 215, 0, 0.4);
