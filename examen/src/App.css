@@ -1,0 +1,656 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Orbitron:wght@400;700;900&display=swap');
+
+
+:root {
+    --hw-red: #e31837;
+    --hw-orange: #ff6a00;
+    --hw-yellow: #ffd700;
+    --hw-blue-dark: #0a1628;
+    /* Fondo principal azul oscuro */
+    --hw-blue-mid: #0d1f3c;
+    /* Fondo secundario */
+    --hw-blue-accent: #1a3a6e;
+    /* Azul medio tarjetas */
+    --hw-cyan: #00cfff;
+    /* Cyan/azul brillante del logo */
+    --hw-card-bg: #0f1e35;
+    /* Fondo tarjetas */
+    --hw-text: #ffffff;
+    --hw-text-muted: #7a9cc0;
+    /* Texto secundario azul grisáceo */
+    --hw-border: #1e3a5f;
+    --hw-success: #00e676;
+    --hw-gradient: linear-gradient(135deg, #e31837, #ff6a00);
+    --hw-gradient-blue: linear-gradient(135deg, #0d1f3c, #1a3a6e);
+    --hw-glow-red: 0 0 20px rgba(227, 24, 55, 0.5);
+    --hw-glow-cyan: 0 0 20px rgba(0, 207, 255, 0.4);
+    --hw-glow-orange: 0 0 20px rgba(255, 106, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--hw-blue-dark);
+    background-image:
+        radial-gradient(ellipse at top, #0d1f3c 0%, #0a1628 60%),
+        repeating-linear-gradient(45deg,
+            transparent,
+            transparent 40px,
+            rgba(0, 207, 255, 0.02) 40px,
+            rgba(0, 207, 255, 0.02) 41px);
+    color: var(--hw-text);
+    font-family: 'Rajdhani', sans-serif;
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+}
+
+
+.hw-navbar {
+    background: linear-gradient(90deg, #060e1c, #0d1f3c, #060e1c);
+    border-bottom: 3px solid var(--hw-orange);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 25px rgba(255, 106, 0, 0.35);
+}
+
+.hw-navbar .navbar-brand {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ff6a00, #e31837);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 4px;
+}
+
+.hw-navbar .nav-link {
+    color: #a0c4e8 !important;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 8px 16px !important;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+}
+
+.hw-navbar .nav-link:hover,
+.hw-navbar .nav-link.active {
+    color: var(--hw-cyan) !important;
+    background: rgba(0, 207, 255, 0.08);
+    border-bottom: 2px solid var(--hw-cyan);
+    text-shadow: var(--hw-glow-cyan);
+}
+
+
+.hw-banner {
+    background:
+        linear-gradient(135deg, #060e1c 0%, #0a1628 50%, #0d1f3c 100%);
+    border-bottom: 4px solid var(--hw-orange);
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+}
+
+/* Patrón de fondo tipo HOT WHEELS */
+.hw-banner::before {
+    content: 'HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS HOT WHEELS';
+    position: absolute;
+    top: 0;
+    left: -20px;
+    right: 0;
+    bottom: 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(0, 80, 160, 0.15);
+    word-break: break-all;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    pointer-events: none;
+    overflow: hidden;
+    transform: rotate(-5deg) scale(1.1);
+}
+
+.hw-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,
+            var(--hw-red), var(--hw-orange),
+            var(--hw-yellow), var(--hw-cyan),
+            var(--hw-orange), var(--hw-red));
+}
+
+.hw-banner-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: white;
+    line-height: 1.1;
+    text-shadow:
+        0 0 30px rgba(255, 106, 0, 0.6),
+        0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hw-banner-title span {
+    background: linear-gradient(135deg, #ff6a00, #e31837, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hw-banner-subtitle {
+    color: var(--hw-text-muted);
+    font-size: 1.1rem;
+    margin-top: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
+.vehicle-card {
+    background: var(--hw-card-bg);
+    border: 1px solid var(--hw-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+}
+
+.vehicle-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--hw-cyan), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--hw-cyan);
+    box-shadow: var(--hw-glow-cyan), 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+.vehicle-card:hover::before {
+    opacity: 1;
+}
+
+.vehicle-card.owned {
+    border-color: var(--hw-success);
+    box-shadow: 0 4px 15px rgba(0, 230, 118, 0.2);
+}
+
+.vehicle-card.owned::after {
+    content: '✓ EN MI COLECCIÓN';
+    position: absolute;
+    top: 14px;
+    right: -30px;
+    background: var(--hw-success);
+    color: #000;
+    font-size: 0.6rem;
+    font-weight: 900;
+    padding: 4px 38px;
+    transform: rotate(35deg);
+    letter-spacing: 1px;
+    z-index: 3;
+}
+
+.vehicle-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.vehicle-card:hover .vehicle-card-img {
+    transform: scale(1.08);
+}
+
+.vehicle-card-body {
+    padding: 16px;
+    background: var(--hw-card-bg);
+}
+
+.vehicle-card-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--hw-text);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.vehicle-card-category {
+    display: inline-block;
+    background: rgba(0, 207, 255, 0.1);
+    color: var(--hw-cyan);
+    border: 1px solid rgba(0, 207, 255, 0.3);
+    border-radius: 20px;
+    padding: 2px 12px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.vehicle-card-year {
+    color: var(--hw-text-muted);
+    font-size: 0.85rem;
+}
+
+/* Botón coleccionar */
+.btn-collect {
+    background: linear-gradient(135deg, #e31837, #ff6a00);
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    padding: 8px 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-collect:hover {
+    transform: scale(1.03);
+    box-shadow: var(--hw-glow-red);
+    color: white;
+}
+
+.btn-collect.collected {
+    background: linear-gradient(135deg, #00c851, #007E33);
+}
+
+.btn-collect.collected:hover {
+    box-shadow: 0 5px 15px rgba(0, 200, 81, 0.5);
+}
+
+/* Botón favorito */
+.btn-favorite {
+    background: transparent;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    color: var(--hw-yellow);
+    border-radius: 6px;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-favorite:hover,
+.btn-favorite.active {
+    background: rgba(255, 215, 0, 0.15);
+    border-color: var(--hw-yellow);
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+}
+
+
+.stat-card {
+    background: var(--hw-card-bg);
+    border: 1px solid var(--hw-border);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+}
+
+.stat-card.total::before {
+    background: linear-gradient(90deg, var(--hw-cyan), #0080ff);
+}
+
+.stat-card.owned::before {
+    background: linear-gradient(90deg, #00e676, #00c851);
+}
+
+.stat-card.missing::before {
+    background: linear-gradient(90deg, var(--hw-orange), var(--hw-red));
+}
+
+.stat-card.categories::before {
+    background: linear-gradient(90deg, var(--hw-yellow), var(--hw-orange));
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--hw-cyan);
+    box-shadow: var(--hw-glow-cyan);
+}
+
+.stat-number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--hw-cyan), #0080ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--hw-text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+
+.category-card {
+    background: var(--hw-card-bg);
+    border: 2px solid var(--hw-border);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.category-card:hover,
+.category-card.selected {
+    border-color: var(--hw-cyan);
+    box-shadow: var(--hw-glow-cyan);
+    transform: translateY(-4px);
+}
+
+.category-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.category-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--hw-text);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+.hw-progress {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.hw-progress-bar {
+    background: linear-gradient(90deg, var(--hw-cyan), var(--hw-orange));
+    height: 100%;
+    border-radius: 50px;
+    transition: width 0.8s ease;
+    position: relative;
+    box-shadow: 0 0 8px rgba(0, 207, 255, 0.5);
+}
+
+.hw-progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.hw-search {
+    background: var(--hw-card-bg);
+    border: 2px solid var(--hw-border);
+    border-radius: 50px;
+    color: var(--hw-text);
+    padding: 12px 20px;
+    font-size: 1rem;
+    width: 100%;
+    transition: all 0.3s ease;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.hw-search:focus {
+    outline: none;
+    border-color: var(--hw-cyan);
+    box-shadow: var(--hw-glow-cyan);
+    background: #0d1f3c;
+}
+
+.hw-search::placeholder {
+    color: #3a5a7a;
+}
+
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, #0d1f3c, #060e1c);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ff6a00, #e31837, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: pulse 1.5s ease-in-out infinite;
+    letter-spacing: 6px;
+}
+
+.loading-spinner {
+    width: 70px;
+    height: 70px;
+    border: 5px solid rgba(0, 207, 255, 0.1);
+    border-top-color: var(--hw-cyan);
+    border-right-color: var(--hw-orange);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 24px 0;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(0.97);
+    }
+}
+
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--hw-orange), var(--hw-red));
+    border-radius: 2px;
+}
+
+.hw-footer {
+    background: #040c18;
+    border-top: 2px solid var(--hw-orange);
+    padding: 28px 0;
+    text-align: center;
+    color: var(--hw-text-muted);
+    margin-top: auto;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+
+.filter-badge {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--hw-border);
+    color: var(--hw-text-muted);
+    padding: 6px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.filter-badge:hover,
+.filter-badge.active {
+    background: rgba(0, 207, 255, 0.1);
+    border-color: var(--hw-cyan);
+    color: var(--hw-cyan);
+    box-shadow: var(--hw-glow-cyan);
+}
+
+
+.page-header {
+    background: linear-gradient(180deg, #0d1f3c, #0a1628);
+    border-bottom: 2px solid var(--hw-orange);
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent, var(--hw-cyan), transparent);
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--hw-blue-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--hw-orange);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hw-red);
+}
+
+
+@media (max-width: 768px) {
+    .hw-banner-title {
+        font-size: 2.2rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .hw-banner {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hw-banner-title {
+        font-size: 1.6rem;
+    }
+
+    .vehicle-card-img {
+        height: 160px;
+    }
+
+    .loading-logo {
+        font-size: 2rem;
+    }
+}
