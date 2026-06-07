@@ -11,12 +11,11 @@ function Collection({ vehicles, toggleOwned, toggleFavorite }) {
 
 
     const filteredVehicles = vehicles.filter(vehicle => {
-        // Filtro 1: por nombre (búsqueda)
+   
         const matchesSearch = vehicle.name
             .toLowerCase()
             .includes(searchTerm.toLowerCase())
 
-        // Filtro 2 (todos / obtenidos / faltantes / favoritos)
         const matchesOwned =
             filterOwned === 'todos' ? true :
                 filterOwned === 'obtenidos' ? vehicle.owned :
@@ -24,23 +23,23 @@ function Collection({ vehicles, toggleOwned, toggleFavorite }) {
                         filterOwned === 'favoritos' ? vehicle.favorite :
                             true
 
-        // por categoría
+
         const matchesCategory =
             filterCategory === 'todas' ? true :
                 vehicle.category === filterCategory
 
-        // El vehículoTODOS los filtros
+
         return matchesSearch && matchesOwned && matchesCategory
     })
 
-    // Estadísti arriba
+ 
     const ownedCount = vehicles.filter(v => v.owned).length
     const favoriteCount = vehicles.filter(v => v.favorite).length
 
     return (
         <div style={{ minHeight: '100vh', paddingBottom: '40px' }}>
 
-            {/* ENCABEZADO */}
+    
             <div style={{
                 background: 'linear-gradient(180deg, #1a0a0a, #0a0a0a)',
                 borderBottom: '2px solid var(--hw-red)',
@@ -125,7 +124,7 @@ function Collection({ vehicles, toggleOwned, toggleFavorite }) {
                     ))}
                 </div>
 
-                {/* Contador de resultados */}
+     
                 <p style={{ color: 'var(--hw-text-muted)', fontSize: '0.85rem', marginBottom: '20px' }}>
                     Mostrando <strong style={{ color: 'var(--hw-yellow)' }}>{filteredVehicles.length}</strong> vehículos
                 </p>
@@ -143,7 +142,7 @@ function Collection({ vehicles, toggleOwned, toggleFavorite }) {
                         ))}
                     </div>
                 ) : (
-                    // Mensaje cuando no hay resultados
+          
                     <div className="text-center py-5">
                         <i className="fas fa-search fa-3x mb-3" style={{ color: 'var(--hw-text-muted)' }}></i>
                         <p style={{ color: 'var(--hw-text-muted)', fontSize: '1.1rem' }}>
