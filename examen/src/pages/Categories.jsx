@@ -86,7 +86,6 @@ function Categories({ vehicles }) {
                   style={{ padding: '0', overflow: 'hidden' }}
                 >
 
-                  {/* IMAGEN DE LA CATEGORÍA */}
                   <div style={{ height: '110px', overflow: 'hidden', position: 'relative' }}>
                     <img
                       src={config.image}
@@ -124,12 +123,10 @@ function Categories({ vehicles }) {
 
                   <div style={{ padding: '12px' }}>
 
-                    {/* Nombre de categoría */}
                     <div className="category-name" style={{ color: config.color }}>
                       {category}
                     </div>
 
-                    {/* Estadí */}
                     <div style={{
                       fontSize: '0.75rem',
                       color: 'var(--hw-text-muted)',
@@ -160,7 +157,7 @@ function Categories({ vehicles }) {
 
         {selectedCategory && (
           <div>
-            {/* Encabezado de la categoría */}
+
             <div className="stat-card mb-4">
               <div className="row align-items-center">
                 <div className="col-md-6">
@@ -217,13 +214,11 @@ function Categories({ vehicles }) {
               </div>
             </div>
 
-            {/* Grid de vehículos de la categoría */}
-            {/* Nota: En Categories no pasamos toggleOwned/toggleFavorite */}
-            {/* Solo mostramos los autos (modo vista) */}
+        
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
               {categoryVehicles.map(vehicle => (
                 <div key={vehicle.id} className="col">
-                  {/* Versión simplificada de la tarjeta (solo vista) */}
+      
                   <div className={`vehicle-card position-relative ${vehicle.owned ? 'owned' : ''}`}>
                     <div style={{ overflow: 'hidden', height: '180px' }}>
                       <img
@@ -258,7 +253,6 @@ function Categories({ vehicles }) {
           </div>
         )}
 
-        {/*no hay categoría seleccionada */}
         {!selectedCategory && (
           <div className="text-center py-5">
             <i className="fas fa-hand-pointer fa-3x mb-3" style={{ color: 'var(--hw-red)' }}></i>
